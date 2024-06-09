@@ -31,7 +31,7 @@ class CustomerController extends Controller
             $customers = Customer::with('invoices');
         }
 
-        return new CustomerCollection($customers->paginate()->appends($request->query()));
+        return CustomerResource::collection($customers->paginate()->appends($request->query()));
     }
 
 
@@ -55,7 +55,7 @@ class CustomerController extends Controller
 
             $customer->loadMissing('invoices');
         }
-        return new CustomerResource($customer);
+        return CustomerResource::make($customer);
         // return $customer;
     }
 
