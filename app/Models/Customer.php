@@ -20,7 +20,7 @@ class Customer extends Model
     ];
 
 
-    public function invoices()
+    public function invoice()
     {
         return $this->hasMany(Invoice::class);
     }

@@ -8,6 +8,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::redirect('/', '/admin');
+
 Route::get('setup', function () {
     $credentials = [
         'email' => 'admin@admin.com',

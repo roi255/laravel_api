@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Customer;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
+            $table->foreignId('customer_id')->constrained()->cascadeOnDelete(); //
             $table->integer('amount');
             $table->string('status')->comment('B(illed),P(aid),V(oid)');
             $table->dateTime('billed_date');

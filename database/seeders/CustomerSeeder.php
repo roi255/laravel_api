@@ -15,15 +15,15 @@ class CustomerSeeder extends Seeder
     {
         Customer::factory()
             ->count(25)
-            ->hasInvoices(10)
+            ->hasInvoice(10)
             ->create();
         Customer::factory()
             ->count(100)
-            ->hasInvoices(5)
+            ->hasInvoice(5)
             ->create();
         Customer::factory()
             ->count(100)
-            ->hasInvoices(3)
+            ->hasInvoice(3)
             ->create();
         Customer::factory()
             ->count(50)
